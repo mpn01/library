@@ -11,12 +11,12 @@
     <link rel="stylesheet" type="text/css" href="styles/css/list.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <title>Biblioteka domowa</title>
+    <title>Your books</title>
 </head>
 <body>
     <div id="results">
-    <a id="goback-button" href="index.php">Powrót</a>
-    <center><h1 class="page-title">Biblioteka domowa</h1></center>
+    <a id="goback-button" href="index.php">Go back</a>
+    <center><h1 class="page-title">Home library</h1></center>
     <?php
         try {
             $conn = new mysqli('localhost', 'root', '', 'library');
@@ -30,26 +30,19 @@
                 switch ($f) {
                     case 1:
                         $query = "SELECT * FROM books";
-                        echo "<center><h2 class='h2all'>Wyświetlono wszystkie pozycje</h2></center>";
+                        echo "<center><h2 class='h2all'>All books displayed</h2></center>";
                         break;
                     case 2:
                         $query = "SELECT * FROM `books` WHERE genre='".$g."'";
-                        echo "<center><h2 class='h2all'>Wyświetlono pozycje z gatunku "."<span class='bluebg'>".$g."</span>"."</h2></center>";
+                        echo "<center><h2 class='h2all'>Books of genre "."<span class='bluebg'>".$g."</span>"."</h2> </center>";
                         break;
                     case 3:
                         $query = "SELECT * FROM books WHERE author LIKE %%$w%% OR other_authors LIKE %%$w%% OR title LIKE %%$w%% OR publishing_house LIKE %%$w%% OR original_title LIKE %%$w%% OR tag LIKE %%$w%%   ";
-                        echo "<center><h2 class='h2all'>Wyświetlono pozycje zgodne z: &raquo".$w."&laquo</h2></center>";
+                        echo "<center><h2 class='h2all'>Books that contain the: &raquo".$w."&laquo</h2></center>";
                         break;
                 }
 
                 $result = $conn->query($query);
-                // if($f == 1){
-                //     echo "<center><h2 class='h2all'>Wyświetlono wszystkie pozycje</h2></center>";
-                // } elseif($f == 2){
-                //     echo "<center><h2 class='h2all'>Wyświetlono pozycje z gatunku "."<span class='bluebg'>".$g."</span>"."</h2></center>";
-                // } else {
-                //     echo "<center><h2 class='h2all'>Wyświetlono pozycje zgodne z: &raquo".$w."&laquo</h2></center>";
-                // }
 
                 while(($row = $result -> fetch_assoc()) != 0) {
                     echo "<div onclick='showInfo(".$row['id'].",1)' class='result'>";
@@ -73,31 +66,31 @@
                             }
                         echo "</h3>";
                         echo "<div id='" . $row['id'] . "' class='info-container'>";
-                            echo "Ilość stron: ";
+                            echo "Pages: ";
                             echo $row['pages'];
                             if ($row['first_release'] == 0){
                                 echo "";
                             } else {
-                                echo ", pierwsze wydanie: " . $row['first_release'];
+                                echo ", First release: " . $row['first_release'];
                             }
                             if ($row['original_title'] == ""){
                                 echo "";
                             } else {
-                                echo ", tytuł oryginału: <i>" . $row['original_title'] . "</i>";
+                                echo ", Original title: <i>" . $row['original_title'] . "</i>";
                             }
                             echo ", ";
-                            echo "Cena: ";
+                            echo "Price: ";
                             if($row['price'] == 0.00){
-                               echo "<i>brak ceny</i>";
+                               echo "<i>price not found</i>";
                             }else {
                                echo $row['price']." zł";
                                }
-                            echo ", Gatunek: ";
+                            echo ", Genre: ";
                             echo $row['genre'];
                             if($row['publishing_house'] == ""){
                                 echo " ";
                             } else {
-                                echo ", Wydawnictwo: ".$row['publishing_house'];
+                                echo ", Publishing house: ".$row['publishing_house'];
                             }
                         echo "</div>";
                     echo "</div>";
