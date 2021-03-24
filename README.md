@@ -1,2 +1,3 @@
 # Home library
-Home library project
+
+![HomeLibraryTeaser](https://raw.githubusercontent.com/mpn01/home-library/master/README/videos/home-library-teaser.gif)
