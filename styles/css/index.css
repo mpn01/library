@@ -178,6 +178,19 @@ select {
 
 }
 
+.radio {
+    border-radius: 4px;
+    font-family: 'Source Sans Pro';
+    padding: 1.2vh;
+    transition: background 0.1s;
+    border: 1px solid var(--lightgray);
+    margin: 1vh;
+    text-align: center;
+    transition: 0.3s;
+    width: 15vw;
+    cursor: pointer;
+}
+
 label {
     border-radius: 4px;
     font-family: 'Source Sans Pro';
