@@ -23,22 +23,27 @@
             if (mysqli_connect_error() != 0){
                 Throw new Exception(mysqli_connect_error());
             } else {
-                $f = $_GET['f'];
-                $g = $_GET['g'];
-                $w = $_GET['w'];
+                $option = $_GET['option'];
+                $genre = $_GET['g'];
+                $search = $_GET['w'];
 
-                switch ($f) {
+                switch ($option) {
                     case 1:
                         $query = "SELECT * FROM books";
                         echo "<center><h2 class='h2all'>All books displayed</h2></center>";
                         break;
                     case 2:
-                        $query = "SELECT * FROM `books` WHERE genre='".$g."'";
-                        echo "<center><h2 class='h2all'>Books of genre "."<span class='bluebg'>".$g."</span>"."</h2> </center>";
+                        $query = "SELECT * FROM `books` WHERE genre='".$genre."'";
+                        echo "<center><h2 class='h2all'>Books of genre "."<span class='bluebg'>".$genre."</span>"."</h2> </center>";
                         break;
                     case 3:
+<<<<<<< HEAD
                         $query = "SELECT * FROM books WHERE author LIKE %%$w%% OR other_authors LIKE %%$w%% OR title LIKE %%$w%% OR publishing_house LIKE %%$w%% OR original_title LIKE %%$w%% OR tag LIKE %%$w%%   ";
                         echo "<center><h2 class='h2all'>Books which contain: &raquo".$w."&laquo</h2></center>";
+=======
+                        $query = "SELECT * FROM books WHERE author LIKE %%$search%% OR other_authors LIKE %%$search%% OR title LIKE %%$search%% OR publishing_house LIKE %%$search%% OR original_title LIKE %%$search%% OR tag LIKE %%$search%%   ";
+                        echo "<center><h2 class='h2all'>Books that contain the: &raquo".$search."&laquo</h2></center>";
+>>>>>>> 3691523158a5bda218a31f625d9459738bf3f0f7
                         break;
                 }
 
