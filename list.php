@@ -38,7 +38,7 @@
                         break;
                     case 3:
                         $query = "SELECT * FROM books WHERE author LIKE %%$w%% OR other_authors LIKE %%$w%% OR title LIKE %%$w%% OR publishing_house LIKE %%$w%% OR original_title LIKE %%$w%% OR tag LIKE %%$w%%   ";
-                        echo "<center><h2 class='h2all'>Books that contain the: &raquo".$w."&laquo</h2></center>";
+                        echo "<center><h2 class='h2all'>Books which contain: &raquo".$w."&laquo</h2></center>";
                         break;
                 }
 
