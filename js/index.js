@@ -51,6 +51,17 @@ const hideAll = () => {
     radioButtons[2].style.border = "1px solid var(--lightgray)";
 }
 
+if (prostokat.style.display == "block"){
+    typeList.removeAttribute("required", "");
+    searchBar.removeAttribute("required", "");
+} else if (typeList.style.display == "block"){
+    typeList.setAttribute("required", "");
+    searchBar.removeAttribute("required", "");
+} else if (searchBar.style.display == "block"){
+    searchBar.setAttribute("required", "");
+    typeList.removeAttribute("required","");
+}
+
 buttonBooksAll.addEventListener("click", hideAll);
 buttonBooksSearch.addEventListener("click", showSearchBar);
 buttonBooksGenre.addEventListener("click", showTypeList);

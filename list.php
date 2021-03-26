@@ -30,15 +30,15 @@
                 switch ($option) {
                     case 1:
                         $query = "SELECT * FROM books";
-                        echo "<center><h2 class='h2all'>All books displayed</h2></center>";
+                        echo "<center><h2 class='h2all'>All books are displayed</h2></center>";
                         break;
                     case 2:
-                        $query = "SELECT * FROM `books` WHERE genre='".$genre."'";
+                        $query = "SELECT * FROM books WHERE genre = '$genre'";
                         echo "<center><h2 class='h2all'>Books of genre "."<span class='bluebg'>".$genre."</span>"."</h2> </center>";
                         break;
                     case 3:
-                        $query = "SELECT * FROM books WHERE author LIKE %%$search%% OR other_authors LIKE %%$search%% OR title LIKE %%$search%% OR publishing_house LIKE %%$search%% OR original_title LIKE %%$search%% OR tag LIKE %%$search%%   ";
-                        echo "<center><h2 class='h2all'>Books that contain the: &raquo".$search."&laquo</h2></center>";
+                        $query = "SELECT * FROM books WHERE author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
+                        echo "<center><h2 class='h2all'>Books which contains the: &raquo".$search."&laquo</h2></center>";
                         break;
                 }
 

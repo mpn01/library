@@ -11,21 +11,9 @@
 <body>
     <div id="search_container">
         <center><h1>Home library</h1></center>
-        <center><h3 class="sub-text"><i>Choose and option</i></h3></center>
         <form action="list.php" method="GET" class="search-form">
-            <div class="radio" id="button_books_all">
-            <input type="radio" id="booksAll" name="option" value="1">Show all books
-            </div>
-            <br />
-            <div class="radio" id="button_books_genre">
-            <input type="radio" id="booksGenre" name="option" value="2">Show books of the selected genre
-            </div>
-            <br />
-            <div class="radio" id="button_books_search">
-            <input type="radio" id="booksSearch" name="option" value="3">Find a book
-            </div>
-            <input name="w" class="search-bar" type="text" placeholder=" title, author, etc.">
             <div id="prostokat"></div>
+            <input name="w" class="search-bar" type="text" placeholder=" title, author, etc.">
             <select name="g" class="type-list">
                 <option value=''><span class='lightgray'>choose a genere</span></option>
                 <?php
@@ -47,7 +35,19 @@
                     $conn -> close();
                 ?>
             </select>
-            <button class="search-submit-button" type="submit" name="submit">Go to the library</button>
+            <label class="radio" id="button_books_all" for="booksAll">
+            <input type="radio" id="booksAll" name="option" value="1">Show all books
+            </label>
+            <br />
+            <label class="radio" id="button_books_genre" for="booksGenre">
+            <input type="radio" id="booksGenre" name="option" value="2">Show books of the selected genre
+            </label>
+            <br />
+            <label class="radio" id="button_books_search" for="booksSearch">
+            <input type="radio" id="booksSearch" name="option" value="3">Find a book
+            </label>
+            <div id="prostokat"></div>
+            <button type="submit" name="submit">Go to the library</button>
         </form>
     </div>
 </body>
