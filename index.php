@@ -2,20 +2,20 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="styles/css/index.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/img/icons/book.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home library</title>
 </head>
 <body>
-    <div id="search_container">
-        <center><h1>Home library</h1></center>
-        <form action="list.php" method="GET" class="search-form">
-            <div id="prostokat"></div>
-            <input name="w" class="search-bar" type="text" placeholder=" title, author, etc.">
-            <select name="g" class="type-list">
-                <option value=''><span class='lightgray'>choose a genere</span></option>
+    <div id="index">
+        <h1 class="index_title">Home library</h1>
+        <h3 class="index_subtitle">search for your book</h3>
+        <form action="list.php" method="GET" id="index_form">
+            <input name="s" id="index_form_searchbar" type="text" placeholder=" title, author, etc.">
+            <select name="g" id="index_form_genrelist">
+                <option value="">choose a genre</option>
                 <?php
                     $conn = new mysqli('localhost', 'root', '', 'library');
                     try {
@@ -35,21 +35,16 @@
                     $conn -> close();
                 ?>
             </select>
-            <label class="radio" id="button_books_all" for="booksAll">
-            <input type="radio" id="booksAll" name="option" value="1">Show all books
-            </label>
-            <br />
-            <label class="radio" id="button_books_genre" for="booksGenre">
-            <input type="radio" id="booksGenre" name="option" value="2">Show books of the selected genre
-            </label>
-            <br />
-            <label class="radio" id="button_books_search" for="booksSearch">
-            <input type="radio" id="booksSearch" name="option" value="3">Find a book
-            </label>
-            <div id="prostokat"></div>
-            <button type="submit" name="submit">Go to the library</button>
+            <a href="#" id="index_form_showall_button">Show all books</a>
+            <button id="index_form_submit_button" type="submit" name="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="32" height="32" viewBox="0 0 24 24" stroke-width="2 " stroke="#efefef" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="10" cy="10" r="7" />
+                <line x1="21" y1="21" x2="15" y2="15" />
+                </svg>
+            </button>
         </form>
     </div>
 </body>
-<script type="text/javascript" src="js/index.js"></script>
+<!-- <script type="text/javascript" src="js/index.js"></script> -->
 </html>
