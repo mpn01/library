@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/icons/book.svg">
     <link rel="stylesheet" type="text/css" href="styles/css/list.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <title>Your books</title>
 </head>
@@ -23,23 +23,27 @@
             if (mysqli_connect_error() != 0){
                 Throw new Exception(mysqli_connect_error());
             } else {
-                $option = $_GET['option'];
-                $genre = $_GET['g'];
-                $search = $_GET['w'];
+                if($_GET["s"] == ""){
+                    $genre = $_GET["g"];
+                    $query = "SELECT * FROM books WHERE genre = '$genre'";
+                    echo "<center><h2 class='h2all'>Books of genre "."<span class='bluebg'>".$genre."</span>"."</h2> </center>";
+                }
 
-                switch ($option) {
-                    case 1:
-                        $query = "SELECT * FROM books";
-                        echo "<center><h2 class='h2all'>All books are displayed</h2></center>";
-                        break;
-                    case 2:
-                        $query = "SELECT * FROM books WHERE genre = '$genre'";
-                        echo "<center><h2 class='h2all'>Books of genre "."<span class='bluebg'>".$genre."</span>"."</h2> </center>";
-                        break;
-                    case 3:
-                        $query = "SELECT * FROM books WHERE author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
-                        echo "<center><h2 class='h2all'>Books which contains the: &raquo".$search."&laquo</h2></center>";
-                        break;
+                if($_GET["g"] == "") {
+                    $search = $_GET["s"];
+                    $query = "SELECT * FROM books WHERE author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
+                    echo "<center><h2 class='h2all'>Books which contains the: &raquo".$search."&laquo</h2></center>";
+                }
+
+                if($_GET["s"] == "" && $_GET["g"] == "") {
+                    header("Location: index.php");
+                }
+
+                if(($_GET["s"] && $_GET["g"]) != "") {
+                    $genre = $_GET["g"];
+                    $search = $_GET["s"];
+                    $query = "SELECT * FROM books WHERE genre LIKE '$genre' AND author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
+                    echo "<center><h2 class='h2all'>Books which contains the: &raquo".$search."&laquo where genre is: <span class='bluebg'>".$genre."</span></h2></center>";
                 }
 
                 $result = $conn->query($query);
