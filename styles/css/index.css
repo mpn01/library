@@ -1,6 +1,8 @@
 * {
     font-family: 'Source Serif Pro';
 }
+
+
 /* :root {
     --white: #efefef;
     --black: #0c0c0c;
@@ -15,6 +17,15 @@
     --darkgray: #6B6A6A;
 } */
 
+
+/* [data-theme="dark"] {
+    --primary-color: #34325e;
+    --secondary-color: #11112c;
+    --font-color: #efefef;
+    --bg-color: #101120;
+    --headers-color: #efefef;
+} */
+
 :root {
     --primary-color: #34325e;
     --secondary-color: #e5e5e5;
@@ -25,13 +36,12 @@
     --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
-/* [data-theme="dark"] {
-    --primary-color: #34325e;
-    --secondary-color: #11112c;
-    --font-color: #efefef;
-    --bg-color: #101120;
-    --headers-color: #efefef;
-} */
+:focus {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--primary-color);
+    -moz-outline-radius: 10px;
+}
 
 body {
     width: 100vw;
@@ -42,6 +52,11 @@ body {
     flex-direction: column;
     padding: 0;
     margin: 0;
+}
+
+option:hover {
+    background: var(--primary-color);
+    color: white;
 }
 
 #index {
@@ -141,7 +156,6 @@ body {
 #index_form_showall_button:hover {
     background: var(--primary-color);
 }
-
 
 #index_form_submit_button {
     background: var(--primary-color);

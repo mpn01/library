@@ -14,51 +14,49 @@
     --blue_gradient: linear-gradient( 112.1deg, rgba(32, 38, 57, 1) 11.4%, rgba(63, 76, 119, 1) 70.2%);
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        bottom: 100;
-    }
-    to {
-        opacity: 1;
-        bottom: 0;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+:root {
+    --primary-color: #34325e;
+    --secondary-color: #e5e5e5;
+    --font-color: #0c0c0c;
+    --bg-color: #ecf0f1;
+    --headers-color: #6B6A6A;
+    --bg-input-color: #D3D3D3;
+    --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
 body {
     width: 100vw;
-    display: flex;
-    justify-content: center;
     margin: 0;
     padding: 0;
-    background: var(--cloud);
-    overflow-x: hidden;
 }
 
-#results {
-    width: 70vw;
-    border-radius: 7px;
-    box-shadow: -1px 3px 10px 1px var(--lightgray);
-    padding: 2vh;
-    font-family: 'Source Sans Pro';
+#list {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.global_title {
+    color: var(--headers-color);
+    font-size: 2.5em;
     font-weight: 600;
-    background: var(--white);
+    margin-bottom: 0;
+}
+
+.global_subtitle {
+    color: var(--headers-color);
+    font-weight: 300;
+    font-style: italic;
 }
 
 #goback-button {
     position: fixed;
     bottom: 0;
     right: 15%;
-    background: var(--blue);
+    background: var(--primary-color);
     text-decoration: none;
     color: white;
     margin: 2vh;
@@ -79,26 +77,33 @@ body {
     display: none;
 }
 
-.result {
+.item {
+    width: 50%;
+    background: var(--secondary-color);
     display: grid;
     position: relative;
     margin-bottom: 1vh;
-    border-radius: 4px;
-    padding: 1vh;
+    border-radius: 10px;
+    padding: 2vh;
+    transition: .3s background;
+    cursor: pointer;
+    box-shadow: 0px 3px 4px var(--shadow-color);
 }
 
-.result:hover {
+.item:hover {
     background: var(--lightgray);
 }
 
-.result::before {
+
+/* .item::before {
     position: absolute;
     content: '';
-    width: 5px;
+    width: 7px;
     height: 100%;
     background: var(--blue);
-    left: -1vw;
-}
+    border-radius: 4px 0px 0px 4px;
+    left: -8px;
+} */
 
 .result-button {
     position: absolute;
