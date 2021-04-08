@@ -2,16 +2,12 @@
     font-family: 'Source Serif Pro';
 }
 
-:root {
-    --white: #efefef;
-    --black: #0c0c0c;
-    --gray: #757575;
-    --lighterblack: #0b0b0b;
-    --pigeon: #CFD8DC;
-    --cloud: #ecf0f1;
-    --lightgray: #d8d6d6;
-    --blue: #34325e;
-    --blue_gradient: linear-gradient( 112.1deg, rgba(32, 38, 57, 1) 11.4%, rgba(63, 76, 119, 1) 70.2%);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
 }
 
 :root {
@@ -19,13 +15,14 @@
     --secondary-color: #e5e5e5;
     --font-color: #0c0c0c;
     --bg-color: #ecf0f1;
-    --headers-color: #6B6A6A;
-    --bg-input-color: #D3D3D3;
+    --headers-color: #6b6a6a;
+    --bg-input-color: #d3d3d3;
     --shadow-color: rgba(0, 0, 0, 0.25);
 }
 
 body {
     width: 100vw;
+    height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -39,136 +36,92 @@ body {
     flex-direction: column;
 }
 
-.global_title {
-    color: var(--headers-color);
-    font-size: 2.5em;
-    font-weight: 600;
-    margin-bottom: 0;
-}
-
-.global_subtitle {
-    color: var(--headers-color);
-    font-weight: 300;
-    font-style: italic;
-}
-
-#goback-button {
+#list_goback_button {
     position: fixed;
     bottom: 0;
     right: 15%;
     background: var(--primary-color);
     text-decoration: none;
     color: white;
+    font-size: 1em;
     margin: 2vh;
     padding: 1vh;
     border-radius: 4px;
-    box-shadow: -1px 3px 10px 1px var(--gray);
+    box-shadow: -1px 3px 10px 1px var(--shadow-color);
     z-index: 999;
     opacity: 0;
     animation: fadeIn 0.5s;
     animation-fill-mode: forwards;
-}
-
-#goback-button:visited {
-    color: white;
-}
-
-.hiden {
-    display: none;
-}
-
-.item {
-    width: 50%;
-    background: var(--secondary-color);
-    display: grid;
-    position: relative;
-    margin-bottom: 1vh;
-    border-radius: 10px;
-    padding: 2vh;
-    transition: .3s background;
-    cursor: pointer;
-    box-shadow: 0px 3px 4px var(--shadow-color);
-}
-
-.item:hover {
-    background: var(--lightgray);
-}
-
-
-/* .item::before {
-    position: absolute;
-    content: '';
-    width: 7px;
-    height: 100%;
-    background: var(--blue);
-    border-radius: 4px 0px 0px 4px;
-    left: -8px;
-} */
-
-.result-button {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 10%;
-    border: none;
-    display: block;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    cursor: pointer;
-    transition: background 0.3s;
-    background: url(info.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-left: 10vw;
+    justify-content: center;
 }
 
-.result-button:hover {
+#list_goback_button:visited {
     color: white;
 }
 
-.info-container {
-    display: none;
-    margin-bottom: 1vh;
-    font-weight: 400;
-    transition: 1s;
+.list_title {
+    color: var(--headers-color);
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
-.active {
-    display: inline;
-}
-
-.h2all {
-    font-weight: 400;
+.list_subtitle {
+    color: var(--headers-color);
+    font-weight: 300;
     font-style: italic;
-    opacity: 0;
-    animation: fadeIn 1s;
-    animation-fill-mode: forwards;
 }
 
-.title {
-    padding: 0;
-    margin: 0;
-}
-
-.author {
-    padding: 0;
-    margin: 0;
-    font-weight: 300;
-}
-
-.date {
-    font-weight: 300;
-}
-
-.bluebg {
-    background: var(--blue);
-    color: var(--white);
+.list_subtitle_highlight {
+    background: var(--primary-color);
+    color: var(--secondary-color);
     font-style: normal;
     padding: 3px;
 }
 
-.page-title {
-    margin-top: 2vw;
+.list_item {
+    width: 50%;
+    background: var(--secondary-color);
+    display: grid;
+    position: relative;
+    margin-bottom: 2vh;
+    border-radius: 10px;
+    padding: 2vh;
+    transition: .3s filter;
+    cursor: pointer;
+    box-shadow: 0px 3px 4px var(--shadow-color);
+}
+
+.list_item:hover {
+    filter: invert(5%);
+}
+
+.list_item_info {
+    display: none;
+    margin-bottom: 1vh;
+    font-weight: 400;
+}
+
+.list_item_title {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+}
+
+.list_item_author {
+    padding: 0;
+    margin: 0;
+    font-weight: 300;
+}
+
+.list_item_date {
+    font-weight: 300;
+}
+
+.active {
+    display: inline;
 }
 
 @media screen and (max-width: 600px) {
