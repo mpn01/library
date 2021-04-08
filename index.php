@@ -13,7 +13,7 @@
         <h1 class="index_title">Home library</h1>
         <h3 class="index_subtitle">search for your book</h3>
         <form action="list.php" method="GET" id="index_form">
-            <input name="s" id="index_form_searchbar" type="text" placeholder=" title, author, etc.">
+            <input name="s" id="index_form_searchbar" type="text" placeholder="title, author, etc.">
             <select name="g" id="index_form_genrelist">
                 <option value="">choose a genre</option>
                 <?php

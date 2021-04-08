@@ -43,6 +43,11 @@
     -moz-outline-radius: 10px;
 }
 
+
+#index_form_submit_button:focus {
+    -moz-outline-radius: 20px;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -170,4 +175,8 @@ option:hover {
 
 #index_form_submit_button:hover {
     background: var(--primary-color);
+}
+
+#index_form_submit_button:focus {
+    -moz-outline-radius: 20px;
 }
