@@ -1,7 +1,3 @@
-* {
-    font-family: 'Source Serif Pro';
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -10,26 +6,15 @@
     }
 }
 
-:root {
-    --primary-color: #34325e;
-    --secondary-color: #e5e5e5;
-    --font-color: #0c0c0c;
-    --bg-color: #ecf0f1;
-    --headers-color: #6b6a6a;
-    --bg-input-color: #d3d3d3;
-    --shadow-color: rgba(0, 0, 0, 0.25);
-}
-
 body {
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 #list {
-    width: 100%;
-    height: 100%;
     background: var(--bg-color);
     display: flex;
     align-items: center;
@@ -37,48 +22,28 @@ body {
 }
 
 #list_goback_button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
     bottom: 0;
-    right: 15%;
+    right: 10%;
     background: var(--primary-color);
     text-decoration: none;
     color: white;
     font-size: 1em;
     margin: 2vh;
-    padding: 1vh;
+    padding: 1vh 1.5vh 1vh 1.5vh;
     border-radius: 4px;
     box-shadow: -1px 3px 10px 1px var(--shadow-color);
     z-index: 999;
     opacity: 0;
     animation: fadeIn 0.5s;
     animation-fill-mode: forwards;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #list_goback_button:visited {
     color: white;
-}
-
-.list_title {
-    color: var(--headers-color);
-    font-size: 2.5em;
-    font-weight: 600;
-    margin-bottom: 0;
-}
-
-.list_subtitle {
-    color: var(--headers-color);
-    font-weight: 300;
-    font-style: italic;
-}
-
-.list_subtitle_highlight {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    font-style: normal;
-    padding: 3px;
 }
 
 .list_item {
@@ -86,7 +51,7 @@ body {
     background: var(--secondary-color);
     display: grid;
     position: relative;
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
     border-radius: 10px;
     padding: 2vh;
     transition: .3s filter;
@@ -98,31 +63,53 @@ body {
     filter: invert(5%);
 }
 
-.list_item_info {
-    display: none;
-    margin-bottom: 1vh;
-    font-weight: 400;
+.list_item_id {
+    color: var(--font-color);
 }
 
 .list_item_title {
     padding: 0;
     margin: 0;
     font-weight: 400;
+    color: var(--font-color);
 }
 
 .list_item_author {
     padding: 0;
     margin: 0;
     font-weight: 300;
+    color: var(--font-color);
+}
+
+.list_item_author a, a:visited {
+    color: var(--font-color);
+    text-decoration: none;
 }
 
 .list_item_date {
+    color: var(--font-color);
     font-weight: 300;
+}
+
+.list_item_info {
+    display: none;
+    margin-bottom: 1vh;
+    font-weight: 400;
+    color: var(--font-color);
 }
 
 .active {
     display: inline;
 }
+
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+    transition: all 750ms !important;
+    transition-delay: 0 impo !important;
+}
+
 
 @media screen and (max-width: 600px) {
     #results {

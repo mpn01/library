@@ -1,49 +1,3 @@
-* {
-    font-family: 'Source Serif Pro';
-}
-
-
-/* :root {
-    --white: #efefef;
-    --black: #0c0c0c;
-    --gray: #757575;
-    --litegray: #948f8f;
-    --lighterblack: #0b0b0b;
-    --pigeon: #CFD8DC10;
-    --cloud: #ecf0f1;
-    --lightgray: #d8d6d6;
-    --blue: #34325e;
-    --lightblue: #413f6e;
-    --darkgray: #6B6A6A;
-} */
-
-
-/* [data-theme="dark"] {
-    --primary-color: #34325e;
-    --secondary-color: #11112c;
-    --font-color: #efefef;
-    --bg-color: #101120;
-    --headers-color: #efefef;
-} */
-
-:root {
-    --primary-color: #34325e;
-    --secondary-color: #e5e5e5;
-    --font-color: #0c0c0c;
-    --bg-color: #ecf0f1;
-    --headers-color: #6B6A6A;
-    --bg-input-color: #D3D3D3;
-    --shadow-color: rgba(0, 0, 0, 0.25);
-}
-
-:focus {
-    outline-style: solid;
-    outline-width: 1px;
-    outline-color: var(--primary-color);
-    -moz-outline-radius: 10px;
-}
-
-
 #index_form_submit_button:focus {
     -moz-outline-radius: 20px;
 }
@@ -51,17 +5,8 @@
 body {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     padding: 0;
     margin: 0;
-}
-
-option:hover {
-    background: var(--primary-color);
-    color: white;
 }
 
 #index {
@@ -72,19 +17,6 @@ option:hover {
     justify-content: center;
     flex-direction: column;
     background: var(--bg-color);
-}
-
-.index_title {
-    color: var(--headers-color);
-    font-size: 3em;
-    font-weight: 600;
-    margin-bottom: 0;
-}
-
-.index_subtitle {
-    color: var(--headers-color);
-    font-weight: 300;
-    font-style: italic;
 }
 
 #index_form {
@@ -155,26 +87,26 @@ option:hover {
     color: white;
     text-decoration: none;
     padding: 0.5vh;
-    transition: background 0.3s;
+    transition: filter 0.3s;
 }
 
 #index_form_showall_button:hover {
-    background: var(--primary-color);
+    filter: brightness(90%);
 }
 
 #index_form_submit_button {
     background: var(--primary-color);
-    color: #efefef;
+    color: var(--font-color);
     border: none;
     border-radius: 20px;
     padding: 1em;
     cursor: pointer;
     margin-left: 3vh;
-    transition: background 0.3s;
+    transition: background 0.3s, filter 0.3s;
 }
 
 #index_form_submit_button:hover {
-    background: var(--primary-color);
+    filter: brightness(90%);
 }
 
 #index_form_submit_button:focus {

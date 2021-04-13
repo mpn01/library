@@ -1,17 +1,20 @@
-<html>
+<html data-theme="light">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/img/icons/book.svg">
+    <link rel="stylesheet" type="text/css" href="styles/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="styles/css/index.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/img/icons/book.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home library</title>
 </head>
 <body>
+    <input type="checkbox" id="global_darkmode_toggle" />
+    <label for="global_darkmode_toggle" id="global_darkmode_toggle_label"></label>
     <div id="index">
-        <h1 class="index_title">Home library</h1>
-        <h3 class="index_subtitle">search for your book</h3>
+        <h1 class="main_title">Home library</h1>
+        <h3 class="main_subtitle">search for your book</h3>
         <form action="list.php" method="GET" id="index_form">
             <input name="s" id="index_form_searchbar" type="text" placeholder="title, author, etc.">
             <select name="g" id="index_form_genrelist">
@@ -22,7 +25,7 @@
                         if($conn->connect_errno != 0){
                             throw new Exception(mysqli_connect_errno());
                         } else {
-                            $query = "SELECT DISTINCT `genre` FROM `books` WHERE genre <>'' ORDER BY genre";
+                            $query = "SELECT DISTINCT genre FROM books WHERE genre <>'' ORDER BY genre";
                             $result = $conn -> query($query);
 
                             while(($row = $result -> fetch_assoc()) !== null) {
@@ -45,6 +48,6 @@
             </button>
         </form>
     </div>
+    <script src="js/darkmode.js"></script>
 </body>
-<!-- <script type="text/javascript" src="js/index.js"></script> -->
 </html>
