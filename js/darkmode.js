@@ -17,6 +17,7 @@ const disableDarkMode = () => {
 
 if (darkMode === "enabled") {
     enableDarkMode();
+    //setting checkbox to checked
     darkModeToggle.checked = "on";
 }
 
@@ -31,7 +32,7 @@ darkModeToggle.addEventListener("click", () => {
     }
 })
 
-//making trainsition effect
+//making transition effect
 let trans = () => {
     document.documentElement.classList.add("transition");
     window.setTimeout(() => {
