@@ -37,48 +37,21 @@
                     //conditions by which books are filtered
                     if (isset($_GET["a"])){
                         $query = "SELECT * FROM books";
-                    } elseif (isset($_GET["g"])) {
+                        echo "<center><h2 class='main_subtitle'>All books displayed</h2> </center>";
+                    } elseif (isset($_GET["g"]) && $_GET["s"] == "") {
                         $genre = $_GET["g"];
                         $query = "SELECT * FROM books WHERE genre = '$genre'";
                         echo "<center><h2 class='main_subtitle'>Books of genre "."<span class='main_subtitle_highlight'>".$genre."</span>"."</h2> </center>";
-                    } elseif (isset($_GET["s"])) {
+                    } elseif (isset($_GET["s"]) && !isset($_GET["g"])) {
                         $search = $_GET["s"];
                         $query = "SELECT * FROM books WHERE author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
                         echo "<center><h2 class='main_subtitle'>Books which contains the: &raquo".$search."&laquo</h2></center>";
-                    } elseif (isset($_GET["s"])) {
+                    } elseif (isset($_GET["s"]) && isset($_GET["g"])) {
                         $genre = $_GET["g"];
                         $search = $_GET["s"];
                         $query = "SELECT * FROM books WHERE genre LIKE '$genre' AND author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
                         echo "<center><h2 class='main_subtitle'>Books which contains the: &raquo".$search."&laquo where genre is: <span class='main_subtitle_highlight'>".$genre."</span></h2></center>";
                     }
-
-
-                    // if ($_GET["s"] == ""){
-                    //     $genre = $_GET["g"];
-                    //     $query = "SELECT * FROM books WHERE genre = '$genre'";
-                    //     echo "<center><h2 class='main_subtitle'>Books of genre "."<span class='main_subtitle_highlight'>".$genre."</span>"."</h2> </center>";
-                    // }
-
-                    // if ($_GET["g"] == "") {
-                    //     $search = $_GET["s"];
-                    //     $query = "SELECT * FROM books WHERE author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
-                    //     echo "<center><h2 class='main_subtitle'>Books which contains the: &raquo".$search."&laquo</h2></center>";
-                    // }
-
-                    // if ($_GET["s"] == "" && $_GET["g"] == "") {
-                    //     header("Location: index.php");
-                    // }
-
-                    // if (($_GET["s"] && $_GET["g"]) != "") {
-                    //     $genre = $_GET["g"];
-                    //     $search = $_GET["s"];
-                    //     $query = "SELECT * FROM books WHERE genre LIKE '$genre' AND author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
-                    //     echo "<center><h2 class='main_subtitle'>Books which contains the: &raquo".$search."&laquo where genre is: <span class='main_subtitle_highlight'>".$genre."</span></h2></center>";
-                    // }
-
-                    // if (strlen($_GET["s"]) < 2) {
-                    //     header("Location: index.php");
-                    // }
 
                     $result = $conn->query($query); //executing query
                     while(($row = $result -> fetch_assoc()) != 0) { //writing out all records

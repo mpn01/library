@@ -11,7 +11,8 @@
 </head>
 <body>
     <input type="checkbox" id="global_darkmode_toggle" />
-    <label for="global_darkmode_toggle" id="global_darkmode_toggle_label"></label>
+    <label for="global_darkmode_toggle" id="global_darkmode_toggle_label">
+    </label>
     <div id="index">
         <h1 class="main_title">Home library</h1>
         <h3 class="main_subtitle">search for your book</h3>
@@ -22,7 +23,7 @@
                 <?php
                     $conn = new mysqli('localhost', 'root', '', 'library');
                     try {
-                        if($conn->connect_errno != 0){
+                        if ($conn->connect_errno != 0){
                             throw new Exception(mysqli_connect_errno());
                         } else {
                             $query = "SELECT DISTINCT genre FROM books WHERE genre <>'' ORDER BY genre";
