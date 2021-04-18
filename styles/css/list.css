@@ -95,13 +95,11 @@
 }
 
 @media screen and (max-width: 600px) {
-    #results {
-        width: 90vw;
+    #list {
+        margin-top: 5vh;
     }
-    .page-title {
-        margin-top: 25vw;
-    }
-    #goback-button {
-        right: 10%;
+
+    .list_item {
+        width: 80%;
     }
 }

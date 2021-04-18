@@ -1,9 +1,4 @@
-﻿<?php
-    // if(isset($_GET['submit']) == false){
-    //     header('Location: index.php');
-    // }
-?>
-<html data-theme="light">
+﻿<html data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,17 +10,11 @@
     <title>Your books</title>
 </head>
 <body>
-    <input type="checkbox" id="global_darkmode_toggle" />
-    <label for="global_darkmode_toggle" id="global_darkmode_toggle_label"></label>
+    <div id="global_toggle">
+        <input type="checkbox" id="global_darkmode_toggle" />
+        <label for="global_darkmode_toggle" id="global_darkmode_toggle_label"></label>
+    </div>
     <div id="list">
-        <a id="list_goback_button" href="index.php">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <line x1="5" y1="12" x2="11" y2="18" />
-                <line x1="5" y1="12" x2="11" y2="6" />
-            </svg>Back
-        </a>
         <h1 class="main_title">Home library</h1>
         <?php
             try {
@@ -82,6 +71,14 @@
                 $conn -> close();
                 } catch (Exception $e) { echo "Error ".$e; }
         ?>
+        <a id="list_goback_button" href="index.php">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <line x1="5" y1="12" x2="11" y2="18" />
+                <line x1="5" y1="12" x2="11" y2="6" />
+            </svg>Back
+        </a>
     </div>
     <script src="js/list.js"></script>
     <script src="js/darkmode.js"></script>
