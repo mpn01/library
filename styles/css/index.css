@@ -5,14 +5,14 @@
     }
     to {
         opacity: 1;
-        bottom: 4vh;
+        bottom: 4%;
     }
 }
 
 @keyframes fadeDown {
     from {
         opacity: 1;
-        bottom: 4vh;
+        bottom: 4%;
     }
     to {
         opacity: 0;
@@ -41,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 2%;
 }
 
 #index_form_searchbar {
@@ -54,8 +55,7 @@
     background-position-x: 3%;
     background-repeat: no-repeat;
     background-color: var(--bg-input-color);
-    margin-right: 1vh;
-    padding: 1.5vh;
+    padding: 2vh;
     color: var(--headers-color);
     font-size: 1.03em;
     box-sizing: border-box;
@@ -74,8 +74,6 @@
     display: flex;
     background: var(--bg-input-color);
     border-radius: 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border: 1px solid var(--primary-color);
     border: none;
@@ -84,26 +82,34 @@
     background-position: right;
     background-position-x: 98%;
     background-repeat: no-repeat;
-    margin-left: 1vh;
-    margin-right: 1vh;
-    padding: 1.5vh;
+    padding: 2vh;
     font-size: 1.03em;
     text-align: center;
+    cursor: pointer;
+}
+
+#index_form_genrelist::before  {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: yellow;
+    right: 0;
+    top: 0;
 }
 
 #index_form_showall_button {
     width: 70%;
-    margin-left: 1vh;
     border-radius: 10px;
     border: none;
     background: var(--primary-color);
-    height: 5vh;
+    height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-decoration: none;
-    padding: 0.5vh;
+    padding: 2.5%;
     transition: filter 0.3s;
     transition: transform 0.3s;
     display: flex;
@@ -120,29 +126,28 @@
     color: var(--font-color);
     border: none;
     border-radius: 20px;
-    padding: 1em;
+    padding: 2%;
     cursor: pointer;
-    margin-left: 3vh;
     transition: transform 0.3s, filter 0.3s;
 }
 
 #index_form_submit_button:hover {
     filter: brightness(90%);
-    transform: scale(1.03);
+    transform: scale(1.10);
 }
 
 #index_form_submit_button:focus {
     -moz-outline-radius: 20px;
 }
 
-#index_form_clear_button {
+#index_form_reset_button {
     display: none;
     justify-content: center;
     align-items: center;
     border: none;
     padding: 1vh;
     position: absolute;
-    bottom: 4vh;
+    bottom: 4%;
     background: var(--primary-color);
     border-radius: 50%;
     box-shadow: 0px 3px 4px var(--shadow-color);
@@ -152,9 +157,13 @@
     transition: transform 0.3s, filter 0.3s;
 }
 
-#index_form_clear_button:hover {
+#index_form_reset_button:hover {
     filter: brightness(90%);
-    transform: scale(1.03);
+    transform: scale(1.07);
+}
+
+#index_from_clear_button:focus {
+    -moz-outline-radius: 50%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -195,9 +204,13 @@
 
     #index_form_submit_button {
         min-height: 21px;
-        padding: 2vh;
+        padding: 2.5vh;
         margin: 0;
         grid-column: submit_button;
         grid-row: submit_button;
+    }
+
+    #index_form_reset_button {
+        padding: 1vh;
     }
 }

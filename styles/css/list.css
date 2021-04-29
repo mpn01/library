@@ -6,6 +6,15 @@
     }
 }
 
+@keyframes stretchDown {
+    from {
+        height: 100px;
+    }
+    to {
+        height: 110px;
+    }
+}
+
 #list {
     height: fit-content;
     background: var(--bg-color);
@@ -33,10 +42,13 @@
     opacity: 0;
     animation: fadeIn 0.5s;
     animation-fill-mode: forwards;
+    border: none;
+    cursor: pointer;
+    transition: .3s transform;
 }
 
-#list_goback_button:visited {
-    color: white;
+#list_goback_button:hover {
+    transform: scale(1.07);
 }
 
 .list_item {
@@ -49,6 +61,8 @@
     padding: 2vh;
     cursor: pointer;
     box-shadow: 0px 3px 4px var(--shadow-color);
+    animation-fill-mode: forwards;
+    max-height: fit-content;
 }
 
 .list_item:hover {
@@ -88,6 +102,7 @@
     margin-bottom: 1vh;
     font-weight: 400;
     color: var(--font-color);
+    transition: .3s;
 }
 
 .active {
