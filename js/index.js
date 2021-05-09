@@ -1,7 +1,6 @@
 const resetButton = document.querySelector("#index_form_reset_button");
 const searchBar = document.querySelector("#index_form_searchbar");
 const genreList = document.querySelector("#index_form_genrelist");
-const genres = document.querySelectorAll("option");
 
 searchBar.addEventListener("keyup", () => {
     //check if status bar is empty
