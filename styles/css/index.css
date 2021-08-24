@@ -44,22 +44,30 @@
     gap: 2%;
 }
 
-#index_form_searchbar {
+#index_form_searchbox {
+    background-color: var(--bg-input-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     width: 100%;
+}
+
+#index_form_searchbar {
+    width: 80%;
     /* border: 1px solid var(--primary-color); */
     min-height: 41px;
     border: none;
     border-radius: 10px;
-    background-image: url(../../assets/img/icons/pencil.svg);
-    background-position: left;
-    background-position-x: 3%;
-    background-repeat: no-repeat;
     background-color: var(--bg-input-color);
     padding: 2vh;
     color: var(--headers-color);
     font-size: 1.03em;
     box-sizing: border-box;
-    padding-left: 6vh;
+}
+
+#index_form_searchbar:focus {
+    outline: none;
 }
 
 #index_form_searchbar::placeholder {
@@ -86,16 +94,6 @@
     font-size: 1.03em;
     text-align: center;
     cursor: pointer;
-}
-
-#index_form_genrelist::before  {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: yellow;
-    right: 0;
-    top: 0;
 }
 
 #index_form_showall_button {
@@ -166,6 +164,14 @@
     -moz-outline-radius: 50%;
 }
 
+
+.focus {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--primary-color);
+    -moz-outline-radius: 10px;
+}
+
 @media screen and (max-width: 1000px) {
     #index_form {
         width: 80%;
@@ -181,7 +187,7 @@
             "showall_button submit_button";
     }
 
-    #index_form_searchbar {
+    #index_form_searchbox {
         margin: 0;
         grid-column: searchbar;
         grid-row: searchbar;
@@ -214,3 +220,4 @@
         padding: 1vh;
     }
 }
+

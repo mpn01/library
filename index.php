@@ -19,7 +19,14 @@
         <h1 class="main_title">Home library</h1>
         <h3 class="main_subtitle">search for your book</h3>
         <form action="list.php" method="GET" id="index_form">
-            <input name="s" id="index_form_searchbar" type="text" placeholder="title, author or tag">
+            <div tabindex="0" id="index_form_searchbox">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#948f8f" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+                    <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+                </svg>
+                <input tabindex="0" name="s" id="index_form_searchbar" type="text" placeholder="title, author or tag">
+            </div>
             <select name="g" id="index_form_genrelist">
                 <option value="" disabled selected>choose a genre</option>
                 <?php
