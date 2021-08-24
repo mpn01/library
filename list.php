@@ -66,6 +66,7 @@
                 <?php if($row['other_authors'] !== ""){ echo "<a href='#'>".$row['author']."</a> ".$row['other_authors']; } else { echo "<a href='author.php?a=".$row['author']."'>".$row['author']."</a>";}?>
             </h3>
             <div class="list_item_info">
+            <hr/>
                 Pages: <?php echo $row['pages'].", ";?>
                 <?php if ($row['first_release'] == 0){ echo "";} else { echo "First release: " . $row['first_release'].", ";}
                 if ($row['original_title'] == ""){ echo "";} else { echo "Original title: <i>".$row['original_title'] . "</i>".", ";}?>
