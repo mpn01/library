@@ -4,7 +4,7 @@ Simple, online library project written in PHP and MySQL. It contains various way
 ![HomeLibraryTeaser](https://raw.githubusercontent.com/mpn01/home-library/master/README/videos/teaser.gif)
 
 ## Assets used in project
-[Icons (Tabler Icons)](https://tablericons.com/)
+[Icons (Tabler Icons)](https://tabler-icons.io/)
 
 [Font (Source Serif Pro)](https://fonts.google.com/specimen/Source+Serif+Pro)
 
