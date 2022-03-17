@@ -31,7 +31,7 @@
 }
 
 #index_form {
-    width: 60%;
+    width: 50%;
     height: 8%;
     min-height: 36px;
     background: var(--secondary-color);
@@ -48,9 +48,11 @@
     background-color: var(--bg-input-color);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 10px;
     width: 100%;
+    padding: 1vh;
+    gap: 1%;
 }
 
 #index_form_searchbar {
@@ -60,7 +62,6 @@
     border: none;
     border-radius: 10px;
     background-color: var(--bg-input-color);
-    padding: 2vh;
     color: var(--headers-color);
     font-size: 1.03em;
     box-sizing: border-box;
@@ -90,14 +91,14 @@
     background-position: right;
     background-position-x: 98%;
     background-repeat: no-repeat;
-    padding: 2vh;
+    padding: 2.1vh;
     font-size: 1.03em;
     text-align: center;
     cursor: pointer;
 }
 
 #index_form_showall_button {
-    width: 70%;
+    width: 50%;
     border-radius: 10px;
     border: none;
     background: var(--primary-color);
@@ -110,8 +111,6 @@
     padding: 2.5%;
     transition: filter 0.3s;
     transition: transform 0.3s;
-    display: flex;
-    justify-content: center;
 }
 
 #index_form_showall_button:hover {
