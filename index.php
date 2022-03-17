@@ -30,7 +30,9 @@
             <select name="g" id="index_form_genrelist">
                 <option value="" disabled selected>choose a genre</option>
                 <?php
-                    $conn = new mysqli('localhost', 'root', '', 'library');
+                    require("connect.php");
+
+                    $conn = new mysqli($servername, $username, $password, $database);
                     try {
                         if ($conn->connect_errno != 0){
                             throw new Exception(mysqli_connect_errno());

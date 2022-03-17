@@ -18,7 +18,9 @@
         <h1 class="main_title">Home library</h1>
         <?php
             try {
-                $conn = new mysqli('localhost', 'root', '', 'library');
+                require("connect.php");
+
+                $conn = new mysqli($servername, $username, $password, $database);
                 if (mysqli_connect_error() != 0){
                     Throw new Exception(mysqli_connect_error());
                 } else {
