@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="assets/img/icons/book.svg">
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon.svg">
     <link rel="stylesheet" type="text/css" href="styles/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="styles/css/index.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap"
