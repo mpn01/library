@@ -68,32 +68,6 @@
     filter: grayscale(5%);
 } */
 
-.list_item_sidebar {
-    position: absolute;
-    width: 40%;
-    height: 100vh;
-    right: 0;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0px 3px 4px var(--shadow-color);
-    background: var(--secondary-color);
-    color: var(--font-color);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-}
-
-.list_item_showmore_button {
-    right: 0;
-    border-radius: 10px;
-    color: var(--font-color);
-    background: var(--primary-color);
-    box-shadow: 0px 3px 4px var(--shadow-color);
-    width: min-content;
-    padding: 1vh;
-    cursor: pointer;
-}
-
 .list_item_id {
     color: var(--font-color);
 }
@@ -131,7 +105,7 @@
 }
 
 .active {
-    display: flex;
+    display: inline;
 }
 
 @media screen and (max-width: 600px) {
