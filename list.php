@@ -1,6 +1,6 @@
 ﻿<html data-theme="light">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/img/icons/favicon.svg">
     <link rel="stylesheet" type="text/css" href="styles/css/main.css"/>
@@ -67,15 +67,22 @@
             <h3 class="list_item_author">
                 <?php if($row['other_authors'] !== ""){ echo "<a href='#'>".$row['author']."</a> ".$row['other_authors']; } else { echo "<a href='author.php?a=".$row['author']."'>".$row['author']."</a>";}?>
             </h3>
-            <div class="list_item_info">
-            <hr/>
-                Pages: <?php echo $row['pages'].", ";?>
-                <?php if ($row['first_release'] == 0){ echo "";} else { echo "First release: " . $row['first_release'].", ";}
-                if ($row['original_title'] == ""){ echo "";} else { echo "Original title: <i>".$row['original_title'] . "</i>".", ";}?>
-                Price: <?php if($row['price'] == null){ echo ""; }else { echo $row['price']." zł, ";} ?>
-                Genre: <?php echo $row['genre'].", "; ?>
-                <?php if($row['publishing_house'] == ""){ echo ""; } else {echo "Publishing house: ".$row['publishing_house'];}?>
+            <div class="list_item_showmore_button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots-vertical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="12" cy="19" r="1"></circle>
+                    <circle cx="12" cy="5" r="1"></circle>
+                </svg>
             </div>
+        </div>
+        <div class="list_item_sidebar">
+            Pages: <?php echo $row['pages'].", ";?>
+            <?php if ($row['first_release'] == 0){ echo "";} else { echo "First release: " . $row['first_release'].", ";}
+            if ($row['original_title'] == ""){ echo "";} else { echo "Original title: <i>".$row['original_title'] . "</i>".", ";}?>
+            Price: <?php if($row['price'] == null){ echo ""; }else { echo $row['price']." zł, ";} ?>
+            Genre: <?php echo $row['genre'].", "; ?>
+            <?php if($row['publishing_house'] == ""){ echo ""; } else {echo "Publishing house: ".$row['publishing_house'];}?>
         </div>
         <?php
                     }
