@@ -15,7 +15,7 @@
         <label for="global_darkmode_toggle" id="global_darkmode_toggle_label"></label>
     </div>
     <div id="list">
-        <h1 class="main_title">Home library</h1>
+        <h1 class="main_title">Library</h1>
         <?php
             try {
                 require("connect.php");
@@ -74,6 +74,7 @@
                 Price: <?php if($row['price'] == null){ echo ""; }else { echo $row['price']." zł, ";} ?>
                 Genre: <?php echo $row['genre'].", "; ?>
                 <?php if($row['publishing_house'] == ""){ echo ""; } else {echo "Publishing house: ".$row['publishing_house'];}?>
+                <img class="list_item_info_cover" src="assets/covers/placeholder.png"/>
             </div>
         </div>
         <?php
