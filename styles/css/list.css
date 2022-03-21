@@ -62,19 +62,17 @@
     padding: 2vh;
     box-shadow: 0px 3px 4px var(--shadow-color);
     cursor: pointer;
-    max-height: 111px;
-    transition: max-height 0.5s;
-    /* transition: filter 0.2s; */
+    max-height: 110px;
+    transition: max-height 1s;
 }
 
 .list_item.expanded {
-    max-height: 148px;
+    max-height: 350px;
 }
 
 .list_item:hover {
     filter: invert(5%);
 }
-
 
 .list_item_id {
     color: var(--font-color);
@@ -104,28 +102,56 @@
     font-weight: 300;
 }
 
-.list_item_info_line {
-    width: 40%;
-    color: var(--font-color);
-}
-
 .list_item_info {
-    display: none;
     margin-bottom: 1vh;
     font-weight: 400;
     color: var(--font-color);
+    display: none;
+    grid-template-columns: 30%;
+}
+
+#column-1 {
+    margin-top: 1vh;
+    width: 90%;
+    grid-column: 1;
+    gap: 2%;
+}
+
+#column-2 {
+    margin-top: 1vh;
+    width: 90%;
+    grid-column: 2;
+    gap: 2%;
+}
+
+#column-3 {
+    margin-top: 1vh;
+    grid-column: 3;
+}
+
+
+.list_item_info_pages,
+.list_item_info_price,
+.list_item_info_release,
+.list_item_info_original,
+.list_item_info_genre,
+.list_item_info_house {
+    font-size: 17px;
+    width: 100%;
+    display: flex;
+    align-self: cener;
+    justify-content: space-between;
 }
 
 .list_item_info.active {
-    display: inline;
+    display: grid;
     animation: appear 1s;
     animation-fill-mode: forwards;
 }
 
 .list_item_info_cover {
-    right: 0;
     border-radius: 10px;
-    width: 10%;
+    width: 35%;
 }
 
 @media screen and (max-width: 600px) {
