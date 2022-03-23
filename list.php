@@ -70,19 +70,19 @@
                 </h3>
             </div>
             <div class="list_item_info"> 
-                <div id="column-1">
+                <div id="list_item_info_column">
                     <div class="list_item_info_pages"><b>Pages</b> <?php echo $row['pages'];?> </div>
                     <div class="list_item_info_price"><b>Price</b> <?php if($row['price'] == null){ echo ""; }else { echo $row['price']." zł";} ?> </div>
                     <div class="list_item_info_release"><?php if ($row['first_release'] == 0){ echo "";} else { echo "<b>First release</b> " . $row['first_release'];}?> </div>
                 </div>
-                <div id="column-2">
+                <div id="list_item_info_column">
                     <div class="list_item_info_genre"><b>Genre </b><?php echo $row['genre'];?></div>
                     <div class="list_item_info_house"><?php if($row['publishing_house'] == ""){ echo ""; } else {echo "<b>Publishing house</b> ".$row['publishing_house'];}?></div>
                     <div class="list_item_info_original"><?php if ($row['original_title'] == ""){ echo "";} else { echo "<b>Original title</b> <i>".$row['original_title'] . "</i>";}?></div>
                 </div>
-                <!-- <div id="column-3">
-                    <img class="list_item_info_cover" src="assets/covers/placeholder.png"/>
-                </div> -->
+                <div id="list_item_info_column">
+                    <img class="list_item_info_cover" src="<?php if($row['cover'] == NULL) { echo "assets/covers/placeholder.png";} else { echo $row['cover'];}?>"/>
+                </div>
             </div>
         </div>
         <?php
