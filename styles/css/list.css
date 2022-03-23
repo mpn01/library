@@ -107,13 +107,16 @@
     font-weight: 400;
     color: var(--font-color);
     display: none;
-    grid-template-columns: 33%;
+    grid-template-columns: 1fr;
     transition: 0.7s;
 }
 
 .list_item_info.active {
+    opacity: 0;
     display: grid;
-    animation: appear 1.4s;
+    animation: appear 0.2s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
 }
 
 #list_item_info_column {
