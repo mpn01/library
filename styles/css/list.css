@@ -107,7 +107,7 @@
     font-weight: 400;
     color: var(--font-color);
     display: none;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr, 2fr, 1fr;
     transition: 0.7s;
 }
 
@@ -127,7 +127,7 @@
 }
 
 #list_item_info_column:first-child {
-    width: 90%;
+    width: 70%;
     grid-column: 1;
 }
 #list_item_info_column:nth-child(2) {
@@ -140,7 +140,7 @@
     text-align: left;
 }
 #list_item_info_column:nth-child(3) {
-    width: 100%;
+    width: 70%;
     align-items: center;
     grid-column: 3;
 }

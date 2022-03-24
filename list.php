@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/img/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" type="text/css" href="styles/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="styles/css/list.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap"
@@ -77,8 +77,8 @@
                 </div>
                 <div id="list_item_info_column">
                     <div class="list_item_info_genre"><b>Genre </b><?php echo $row['genre'];?></div>
-                    <div class="list_item_info_house"><?php if($row['publishing_house'] == ""){ echo ""; } else {echo "<b>Publishing house</b> ".$row['publishing_house'];}?></div>
-                    <div class="list_item_info_original"><?php if ($row['original_title'] == ""){ echo "";} else { echo "<b>Original title</b> <i>".$row['original_title'] . "</i>";}?></div>
+                    <div class="list_item_info_house"><b>Publishing house </b><?php if($row['publishing_house'] == ""){ echo "-"; } else {echo $row['publishing_house'];}?></div>
+                    <div class="list_item_info_original"><b>Original title</b><?php if ($row['original_title'] == ""){ echo "-";} else { echo "<i>".$row['original_title']."</i>";}?></div>
                 </div>
                 <div id="list_item_info_column">
                     <img class="list_item_info_cover" src="<?php if($row['cover'] == NULL) { echo "assets/covers/placeholder.png";} else { echo $row['cover'];}?>"/>
