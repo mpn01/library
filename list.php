@@ -69,7 +69,7 @@
                     <?php if($row['other_authors'] !== ""){ echo "<a href='#'>".$row['author']."</a> ".$row['other_authors']; } else { echo "<a href='author.php?a=".$row['author']."'>".$row['author']."</a>";}?>
                 </h3>
             </div>
-            <div id="item__details"> 
+            <div id="item__details">
                 <div class="details__column">
                     <div id="details__pages"><b>Pages</b> <?php echo $row['pages'];?> </div>
                     <div id="details__price"><b>Price</b> <?php if($row['price'] == null){ echo ""; }else { echo $row['price']." zł";} ?> </div>
