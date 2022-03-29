@@ -12,7 +12,7 @@ If web server is working correct, clone this repo:
 git clone https://github.com/mpn01/library.git
 ```
 
-After that, create `connect.php` file with your database credentials matching variables below and put it in page directory.
+After that, create `connect.php` file with your database credentials matching variables below and put it in directory where you clone this repo.
 
 ```php
     $servername = "Your server name" //ex. localhost
@@ -21,7 +21,7 @@ After that, create `connect.php` file with your database credentials matching va
     $database = "Name of your database" //ex. library
 ```
 
-To make things easy, follow this sctructure of database:
+To make things easy, follow this structure of database:
 
 | Field            | Type         | Null | Key | Default | Extra          |
 |------------------|--------------|------|-----|---------|----------------|
