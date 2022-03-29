@@ -1,6 +1,6 @@
-const resetButton = document.querySelector("#index_form_reset_button");
-const searchBar = document.querySelector("#index_form_searchbar");
-const genreList = document.querySelector("#index_form_genrelist");
+const resetButton = document.querySelector(".search__button--reset");
+const searchBar = document.querySelector("#bar__input");
+const genreList = document.querySelector("#search__select");
 
 searchBar.addEventListener("keyup", () => {
     //check if status bar is empty
@@ -32,13 +32,13 @@ resetButton.addEventListener("click",() => {
     resetButton.style.animation = ".5s fadeDown";
     //set timeout for applying display: none
     setTimeout(() => resetButton.style.display = "none", 500);
-    document.querySelector('#index_form_searchbox').classList.remove('focus');
+    document.querySelector('#search__bar').classList.remove('focus');
 })
 
 searchBar.addEventListener('focus', () => {
-    document.querySelector('#index_form_searchbox').classList.add('focus');
+    document.querySelector('#search__bar').classList.add('focus');
 })
 
 genreList.addEventListener('click', () => {
-    document.querySelector('#index_form_searchbox').classList.remove('focus');
+    document.querySelector('#search__bar').classList.remove('focus');
 })
