@@ -15,7 +15,7 @@
     }
 }
 
-#list {
+main {
     height: fit-content;
     background: var(--bg-color);
     display: flex;
@@ -24,7 +24,7 @@
     gap: 3vh;
 }
 
-#list_goback_button {
+#button--goback {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,11 +48,11 @@
     transition: .3s transform;
 }
 
-#list_goback_button:hover {
+#button--goback:hover {
     transform: scale(1.07);
 }
 
-.list_item {
+#item {
     width: 50%;
     background: var(--secondary-color);
     display: grid;  
@@ -65,45 +65,45 @@
     transition: min-height 0.3s ease-in-out, max-height 0.3s ease-in-out, filter 0.1s;
 }
 
-.list_item.expanded {
+#item.expanded {
     max-height: 300px;
     min-height: 250px;
     transition: min-height 0.3s ease-in-out, max-height 0.3s ease-in-out;
 }
 
-.list_item:hover {
+#item:hover {
     filter: invert(5%);
 }
 
-.list_item_id {
+#item__id {
     color: var(--font-color);
 }
 
-.list_item_title {
+#item__title {
     padding: 0;
     margin: 0;
     font-weight: 400;
     color: var(--font-color);
 }
 
-.list_item_author {
+#item__author {
     padding: 0;
     margin: 0;
     font-weight: 300;
     color: var(--font-color);
 }
 
-.list_item_author a, a:visited {
+#item__author a, a:visited {
     color: var(--font-color);
     text-decoration: none;
 }
 
-.list_item_date {
+#item__date {
     color: var(--font-color);
     font-weight: 300;
 }
 
-.list_item_info {
+#item__details {
     font-weight: 400;
     color: var(--font-color);
     display: none;
@@ -111,7 +111,7 @@
     transition: 0.7s;
 }
 
-.list_item_info.active {
+#item__details.active {
     opacity: 0;
     display: grid;
     animation: appear 0.2s;
@@ -119,38 +119,38 @@
     animation-delay: 0.2s;
 }
 
-#list_item_info_column {
+.details__column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
 }
 
-#list_item_info_column:first-child {
+.details__column:first-child {
     width: 70%;
     grid-column: 1;
 }
-#list_item_info_column:nth-child(2) {
+.details__column:nth-child(2) {
     width: 90%;
     grid-column: 2;
     text-align: right;
 }
 
-#list_item_info_column:nth-child(2) b {
+.details__column:nth-child(2) b {
     text-align: left;
 }
-#list_item_info_column:nth-child(3) {
+.details__column:nth-child(3) {
     width: 100%;
     align-items: center;
     grid-column: 3;
 }
 
-.list_item_info_pages,
-.list_item_info_price,
-.list_item_info_release,
-.list_item_info_original,
-.list_item_info_genre,
-.list_item_info_house {
+#details__pages,
+#details__price,
+#details__release,
+#details__original,
+#details__genre,
+#details__house {
     font-size: 17px;
     width: 100%;
     display: flex;
@@ -158,17 +158,17 @@
     justify-content: space-between;
 }
 
-.list_item_info_cover {
+#details__cover {
     border-radius: 5px;
-    width: 75%;
+    width: 144px;
 }
 
 @media screen and (max-width: 600px) {
-    #list {
+    main {
         margin-top: 5vh;
     }
 
-    .list_item {
+    .item {
         width: 80%;
     }
 }

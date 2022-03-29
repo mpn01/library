@@ -1,5 +1,5 @@
 let darkMode = localStorage.getItem("darkMode"); //checking which theme is set
-const darkModeToggle = document.querySelector("#global_darkmode_toggle");
+const darkModeToggle = document.querySelector("#theme__toggle");
 
 const enableDarkMode = () => {
     //setting data-theme attribute to dark

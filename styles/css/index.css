@@ -20,7 +20,7 @@
     }
 }
 
-#index {
+main {
     width: 100%;
     height: 100%;
     display: flex;
@@ -30,7 +30,7 @@
     background: var(--bg-color);
 }
 
-#index_form {
+#search {
     width: 50%;
     height: 8%;
     min-height: 36px;
@@ -44,7 +44,7 @@
     gap: 2%;
 }
 
-#index_form_searchbox {
+#search__bar {
     background-color: var(--bg-input-color);
     display: flex;
     align-items: center;
@@ -55,7 +55,7 @@
     gap: 1%;
 }
 
-#index_form_searchbar {
+#bar__input {
     width: 80%;
     /* border: 1px solid var(--primary-color); */
     min-height: 41px;
@@ -67,16 +67,16 @@
     box-sizing: border-box;
 }
 
-#index_form_searchbar:focus {
+#bar__input:focus {
     outline: none;
 }
 
-#index_form_searchbar::placeholder {
+#bar__input::placeholder {
     color: var(--headers-color);
     font-size: 1.03em;
 }
 
-#index_form_genrelist {
+#search__select {
     position: relative;
     min-height: 41px;
     color: var(--headers-color);
@@ -97,7 +97,7 @@
     cursor: pointer;
 }
 
-#index_form_showall_button {
+#search__button--showall {
     width: 50%;
     border-radius: 10px;
     border: none;
@@ -113,12 +113,12 @@
     transition: transform 0.3s;
 }
 
-#index_form_showall_button:hover {
+#search__button--showall:hover {
     filter: brightness(90%);
     transform: scale(1.05)
 }
 
-#index_form_submit_button {
+#search__button--submit {
     background: var(--primary-color);
     color: var(--font-color);
     border: none;
@@ -128,16 +128,16 @@
     transition: transform 0.3s, filter 0.3s;
 }
 
-#index_form_submit_button:hover {
+#search__button--submit:hover {
     filter: brightness(90%);
     transform: scale(1.10);
 }
 
-#index_form_submit_button:focus {
+#search__button--submit:focus {
     -moz-outline-radius: 20px;
 }
 
-#index_form_reset_button {
+#search__button--reset {
     display: none;
     justify-content: center;
     align-items: center;
@@ -154,12 +154,12 @@
     transition: transform 0.3s, filter 0.3s;
 }
 
-#index_form_reset_button:hover {
+#search__button--reset:hover {
     filter: brightness(90%);
     transform: scale(1.07);
 }
 
-#index_from_clear_button:focus {
+#search__button--reset:focus {
     -moz-outline-radius: 50%;
 }
 
