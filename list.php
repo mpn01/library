@@ -36,7 +36,7 @@
                         $genre = $_GET["g"];
                         $query = "SELECT * FROM books WHERE genre = '$genre'";
                         //show information about which books have been displayed
-                        echo "<center><h2 id='subtitle'>Books of genre "."<span class='main_subtitle_highlight'>".$genre."</span>"."</h2> </center>";
+                        echo "<center><h2 id='subtitle'>Books of genre "."<span id='subtitle--highlight'>".$genre."</span>"."</h2> </center>";
                     } elseif (isset($_GET["s"]) && !isset($_GET["g"])) {
                         //display books where author, other authors, title, original title or publishing house equals to typed
                         $search = $_GET["s"];

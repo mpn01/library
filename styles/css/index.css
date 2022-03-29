@@ -171,7 +171,7 @@ main {
 }
 
 @media screen and (max-width: 1000px) {
-    #index_form {
+    #search {
         width: 80%;
         min-height: 226px;
         height: 30%;
@@ -185,20 +185,20 @@ main {
             "showall_button submit_button";
     }
 
-    #index_form_searchbox {
+    #search__bar {
         margin: 0;
         grid-column: searchbar;
         grid-row: searchbar;
     }
 
-    #index_form_genrelist {
+    #search__select {
         width: 100%;
         margin: 0;
         grid-column: genrelist;
         grid-row: genrelist;
     }
 
-    #index_form_showall_button {
+    .search__button--showall {
         min-height: 35px;
         width: 80%;
         margin: 0;
@@ -206,7 +206,7 @@ main {
         grid-row: showall_button;
     }
 
-    #index_form_submit_button {
+    .search__button--submit {
         min-height: 21px;
         padding: 2.5vh;
         margin: 0;
@@ -214,7 +214,7 @@ main {
         grid-row: submit_button;
     }
 
-    #index_form_reset_button {
+    .search__button--reset{
         padding: 1vh;
     }
 }

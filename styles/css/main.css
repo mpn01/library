@@ -123,7 +123,7 @@ body {
     font-style: italic;
 }
 
-.main_subtitle_highlight {
+#subtitle--highlight {
     background: var(--primary-color);
     color: #efefef;
     font-style: normal;
