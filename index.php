@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>Home library</title>
+    <title>Search | Library</title>
 </head>
 <body>
     <div id="theme">
@@ -50,15 +50,15 @@
                     $conn -> close();
                 ?>
             </select>
-            <a href="list.php?a" id="search__button--showall">Show all</a>
-            <button type="submit" id="search__button--submit">
+            <a href="list.php?a" class="search__button search__button--showall">Show all</a>
+            <button type="submit" class="search__button search__button--submit">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#efefef" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <circle cx="10" cy="10" r="7" />
                     <line x1="21" y1="21" x2="15" y2="15" />
                 </svg>
             </button>
-            <button type="reset" id="search__button--reset">
+            <button type="reset" class="search__button search__button--reset">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#efefef" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="18" y1="6" x2="6" y2="18" />
