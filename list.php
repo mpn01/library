@@ -57,7 +57,7 @@
                     while(($row = $result -> fetch_assoc()) != 0) {
         ?>
         <div id="item">
-            <span>
+            <div id="item__info">
                 <span id="item__id"><?php echo $row['id'];?></span>
                 <h2 id="item__title">
                     <?php echo $row['title']." ";?>
@@ -68,7 +68,7 @@
                 <h3 id="item__author">
                     <?php if($row['other_authors'] !== ""){ echo "<a href='#'>".$row['author']."</a> ".$row['other_authors']; } else { echo "<a href='author.php?a=".$row['author']."'>".$row['author']."</a>";}?>
                 </h3>
-            </span>
+            </div>
             <div id="item__details"> 
                 <div class="details__column">
                     <div id="details__pages"><b>Pages</b> <?php echo $row['pages'];?> </div>
