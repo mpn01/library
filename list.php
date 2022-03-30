@@ -30,26 +30,26 @@
                         //display all books
                         $query = "SELECT * FROM books";
                         //show information about which books have been displayed
-                        echo "<center><h2 id='subtitle'>All books displayed</h2> </center>";
+                        echo "<center><h2 class='subtitle'>All books displayed</h2> </center>";
                     } elseif (isset($_GET["g"]) && $_GET["s"] == "") {
                         //display books with choosen genre
                         $genre = $_GET["g"];
                         $query = "SELECT * FROM books WHERE genre = '$genre'";
                         //show information about which books have been displayed
-                        echo "<center><h2 id='subtitle'>Books of genre "."<span id='subtitle--highlight'>".$genre."</span>"."</h2> </center>";
+                        echo "<center><h2 class='subtitle'>Books of genre "."<span class='subtitle subtitle--highlight'>".$genre."</span>"."</h2> </center>";
                     } elseif (isset($_GET["s"]) && !isset($_GET["g"])) {
                         //display books where author, other authors, title, original title or publishing house equals to typed
                         $search = $_GET["s"];
                         $query = "SELECT * FROM books WHERE author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
                         //show information about which books have been displayed
-                        echo "<center><h2 id='subtitle'>Books which contains the: &raquo".$search."&laquo</h2></center>";
+                        echo "<center><h2 class='subtitle'>Books which contains the: &raquo".$search."&laquo</h2></center>";
                     } elseif (isset($_GET["s"]) && isset($_GET["g"])) {
                         //display book with choosen genre, where author, other authors, title, original title or publishing house equals to typed
                         $genre = $_GET["g"];
                         $search = $_GET["s"];
                         $query = "SELECT * FROM books WHERE genre LIKE '$genre' AND author LIKE '%%$search%%' OR other_authors LIKE '%%$search%%' OR title LIKE '%%$search%%' OR publishing_house LIKE '%%$search%%' OR original_title LIKE '%%$search%%'";
                         //show information about which books have been displayed
-                        echo "<center><h2 id='subtitle'>Books which contains the: &raquo".$search."&laquo where genre is: <span class='main_subtitle_highlight'>".$genre."</span></h2></center>";
+                        echo "<center><h2 class='subtitle'>Books which contains the: &raquo".$search."&laquo where genre is: <span class='subtitle subtitle--highlight'>".$genre."</span></h2></center>";
                     }
 
                     $result = $conn->query($query);
@@ -70,17 +70,17 @@
                 </h3>
             </div>
             <div id="item__details"> 
-                <div class="details__column">
+                <div class="details__column details__column--left">
                     <div id="details__pages"><b>Pages</b> <?php echo $row['pages'];?> </div>
                     <div id="details__price"><b>Price</b> <?php if($row['price'] == null){ echo ""; }else { echo $row['price']." zł";} ?> </div>
                     <div id="details__release"><?php if ($row['first_release'] == 0){ echo "";} else { echo "<b>First release</b> " . $row['first_release'];}?> </div>
                 </div>
-                <div class="details__column">
+                <div class="details__column details__column--middle">
                     <div id="details__genre"><b>Genre </b><?php echo $row['genre'];?></div>
                     <div id="details__house"><b>Publishing house </b><?php if($row['publishing_house'] == ""){ echo "-"; } else {echo $row['publishing_house'];}?></div>
                     <div id="details__original"><b>Original title</b><?php if ($row['original_title'] == ""){ echo "-";} else { echo "<i>".$row['original_title']."</i>";}?></div>
                 </div>
-                <div class="details__column">
+                <div class="details__column details__column--right">
                     <img id="details__cover" src="<?php if($row['cover'] == NULL) { echo "assets/covers/placeholder.png";} else { echo $row['cover'];}?>"/>
                 </div>
             </div>
