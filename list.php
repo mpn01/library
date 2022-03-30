@@ -69,13 +69,10 @@
                     <?php if($row['other_authors'] !== ""){ echo "<a href='#'>".$row['author']."</a> ".$row['other_authors']; } else { echo "<a href='author.php?a=".$row['author']."'>".$row['author']."</a>";}?>
                 </h3>
             </div>
-<<<<<<< HEAD
             <div id="item__details"> 
                 <div class="details__column details__column--left">
-=======
             <div id="item__details">
                 <div class="details__column">
->>>>>>> e483fe9fd0e5ad4a76ddbca6b3f27aaba5977832
                     <div id="details__pages"><b>Pages</b> <?php echo $row['pages'];?> </div>
                     <div id="details__price"><b>Price</b> <?php if($row['price'] == null){ echo ""; }else { echo $row['price']." zł";} ?> </div>
                     <div id="details__release"><?php if ($row['first_release'] == 0){ echo "";} else { echo "<b>First release</b> " . $row['first_release'];}?> </div>

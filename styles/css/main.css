@@ -116,14 +116,14 @@ body {
     margin-bottom: 0;
 }
 
-#subtitle {
+.subtitle {
     color: var(--headers-color);
     font-weight: 300;
     font-size: 1.25em;
     font-style: italic;
 }
 
-#subtitle--highlight {
+.subtitle--highlight {
     background: var(--primary-color);
     color: #efefef;
     font-style: normal;

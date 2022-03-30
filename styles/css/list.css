@@ -126,20 +126,20 @@ main {
     gap: 10px;
 }
 
-.details__column:first-child {
+.details__column--left {
     width: 70%;
     grid-column: 1;
 }
-.details__column:nth-child(2) {
+.details__column--middle {
     width: 90%;
     grid-column: 2;
     text-align: right;
 }
 
-.details__column:nth-child(2) b {
+.details__column--middle b {
     text-align: left;
 }
-.details__column:nth-child(3) {
+.details__column:right {
     width: 100%;
     align-items: center;
     grid-column: 3;
@@ -163,12 +163,117 @@ main {
     width: 144px;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     main {
         margin-top: 5vh;
     }
 
-    .item {
+    #item {
         width: 80%;
+        min-height: 90px;
+        max-height: 100px;
+    }
+    
+    #item.expanded {
+        max-height: 550px;
+        min-height: 500px;
+    }
+
+    #item__details.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .details__column {
+        margin-top: 10px;
+    }
+
+    .details__column--left {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 600px) { 
+    #item {
+        width: 80%;
+        min-height: 90px;
+        max-height: 100px;
+    }
+    
+    #item.expanded {
+        max-height: 550px;
+        min-height: 500px;
+    }
+
+    #item__details.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .details__column {
+        margin-top: 10px;
+    }
+
+    .details__column--left {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #item {
+        width: 70%;
+        min-height: 90px;
+        max-height: 100px;
+    }
+    
+    #item.expanded {
+        max-height: 550px;
+        min-height: 500px;
+    }
+
+    #item__details.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .details__column {
+        margin-top: 10px;
+    }
+
+    .details__column--left {
+        width: 90%;
+    }
+}
+
+/* @media only screen and (min-width: 992px) {
+
+} */
+
+@media only screen and (min-width: 1200px) {
+    #item {
+        width: 50%;
+        min-height: 90px;
+        max-height: 100px;
+    }
+    
+    #item.expanded {
+        max-height: 300px;
+        min-height: 250px;
+    }
+
+    #item__details.active {
+        opacity: 0;
+        display: grid;
+    }
+
+    .details__column--left {
+        width: 70%;
+        grid-column: 1;
     }
 }
