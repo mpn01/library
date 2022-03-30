@@ -1,4 +1,4 @@
-# 📚 Library️
+# <center> 📚 Library️ </center>
 
 ## 📖 Description
 Library project written in PHP and MySQL. It contains various ways to search between the books, that is searching by keywords like title, authors, tags or publishing house and also searching by genre of the book.
