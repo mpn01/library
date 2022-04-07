@@ -14,8 +14,10 @@
         <input type="checkbox" id="theme__toggle" />
         <label for="theme__toggle" id="theme__toggle--state"></label>
     </div>
+    <header>
+        <h1 id="title"> 📚 Library</h1>
+    </header>
     <main>
-        <h1 id="title">Library</h1>
         <?php
             try {
                 require("connect.php");
