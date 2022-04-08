@@ -16,8 +16,10 @@
         <input type="checkbox" id="theme__toggle" />
         <label for="theme__toggle" id="theme__toggle--state"></label>
     </div>
+    <header>
+        <h1 id="title"> 📚 Library</h1>
+    </header>
     <main>        
-        <h1 id="title">Library</h1>
         <h3 class="subtitle">search for your book</h3>
         <form action="list.php" method="GET" id="search">
             <div tabindex="0" id="search__bar">
