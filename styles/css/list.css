@@ -64,6 +64,7 @@ main {
     max-height: 100px;
     transition: min-height 0.3s ease-in-out, max-height 0.3s ease-in-out, filter 0.1s;
     margin-bottom: 1vh;
+    font-size: 0.90rem;
 }
 
 #item.expanded {
@@ -152,11 +153,11 @@ main {
 #details__original,
 #details__genre,
 #details__house {
-    font-size: 17px;
     width: 100%;
     display: flex;
     align-self: cener;
     justify-content: space-between;
+    font-size: 1rem;
 }
 
 #details__cover {

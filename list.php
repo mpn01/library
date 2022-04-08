@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles/css/list.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"> 
     <title>Results | Library</title>
 </head>
 <body>

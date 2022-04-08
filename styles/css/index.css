@@ -73,7 +73,7 @@ main {
 
 #bar__input::placeholder {
     color: var(--headers-color);
-    font-size: 1.03em;
+    /* font-size: 1.03em; */
 }
 
 #search__select {
