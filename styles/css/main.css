@@ -57,6 +57,7 @@ header {
     align-items: center;
     justify-content: right;
     text-align: right;
+    z-index: 1;
 }
 
 
@@ -67,6 +68,7 @@ header {
     justify-content: center;
     top: 1vh;
     left: 1vh;
+    z-index: 2;
 }
 
 #theme__toggle {

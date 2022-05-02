@@ -20,7 +20,7 @@
         <h1 id="title"> 📚 Library</h1>
     </header>
     <main>        
-        <h3 class="subtitle">search for your book</h3>
+        <!-- <h3 class="subtitle">search for your book</h3> -->
         <form action="list.php" method="GET" id="search">
             <div tabindex="0" id="search__bar">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="23" height="23" viewBox="0 0 24 24" stroke-width="1.5" stroke="#948f8f" fill="none" stroke-linecap="round" stroke-linejoin="round">
