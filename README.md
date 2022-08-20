@@ -1,7 +1,3 @@
-
-# Home library
-Simple library project written in PHP and MySQL. It contains various ways to search between the books, that is searching by keywords like title, authors, tags or publishing house and also searching by genre of the book.
-
 # <p align="center"> 📚 Library️ </p>
 
 ## 📖 Description
