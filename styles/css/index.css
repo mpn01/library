@@ -20,8 +20,7 @@
     }
 }
 
-#index {
-    width: 100%;
+main {
     height: 100%;
     display: flex;
     align-items: center;
@@ -30,8 +29,8 @@
     background: var(--bg-color);
 }
 
-#index_form {
-    width: 60%;
+#search {
+    width: 50%;
     height: 8%;
     min-height: 36px;
     background: var(--secondary-color);
@@ -44,38 +43,39 @@
     gap: 2%;
 }
 
-#index_form_searchbox {
+#search__bar {
     background-color: var(--bg-input-color);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 10px;
     width: 100%;
+    padding: 1vh;
+    gap: 1%;
 }
 
-#index_form_searchbar {
+#bar__input {
     width: 80%;
     /* border: 1px solid var(--primary-color); */
     min-height: 41px;
     border: none;
     border-radius: 10px;
     background-color: var(--bg-input-color);
-    padding: 2vh;
     color: var(--headers-color);
     font-size: 1.03em;
     box-sizing: border-box;
 }
 
-#index_form_searchbar:focus {
+#bar__input:focus {
     outline: none;
 }
 
-#index_form_searchbar::placeholder {
+#bar__input::placeholder {
     color: var(--headers-color);
-    font-size: 1.03em;
+    /* font-size: 1.03em; */
 }
 
-#index_form_genrelist {
+#search__select {
     position: relative;
     min-height: 41px;
     color: var(--headers-color);
@@ -90,77 +90,74 @@
     background-position: right;
     background-position-x: 98%;
     background-repeat: no-repeat;
-    padding: 2vh;
+    padding: 2.1vh;
     font-size: 1.03em;
     text-align: center;
     cursor: pointer;
 }
 
-#index_form_showall_button {
-    width: 70%;
-    border-radius: 10px;
+.search__button {
     border: none;
+    background: var(--primary-color);
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.search__button--showall {
+    width: 50%;
+    border-radius: 10px;
     background: var(--primary-color);
     height: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     text-decoration: none;
     padding: 2.5%;
     transition: filter 0.3s;
     transition: transform 0.3s;
-    display: flex;
-    justify-content: center;
+    color: white;
 }
 
-#index_form_showall_button:hover {
+.search__button--showall:hover {
     filter: brightness(90%);
     transform: scale(1.05)
 }
 
-#index_form_submit_button {
-    background: var(--primary-color);
-    color: var(--font-color);
-    border: none;
+.search__button--submit {
     border-radius: 20px;
     padding: 2%;
-    cursor: pointer;
     transition: transform 0.3s, filter 0.3s;
 }
 
-#index_form_submit_button:hover {
+.search__button--submit:hover {
     filter: brightness(90%);
     transform: scale(1.10);
 }
 
-#index_form_submit_button:focus {
+.search__button--submit:focus {
     -moz-outline-radius: 20px;
 }
 
-#index_form_reset_button {
+.search__button--reset {
     display: none;
     justify-content: center;
     align-items: center;
-    border: none;
     padding: 1vh;
     position: absolute;
     bottom: 4%;
-    background: var(--primary-color);
     border-radius: 50%;
     box-shadow: 0px 3px 4px var(--shadow-color);
-    cursor: pointer;
     animation: .5s fadeUp;
     animation-fill-mode: forwards;
     transition: transform 0.3s, filter 0.3s;
 }
 
-#index_form_reset_button:hover {
+.search__button--reset:hover {
     filter: brightness(90%);
     transform: scale(1.07);
 }
 
-#index_from_clear_button:focus {
+.search__button--reset:focus {
     -moz-outline-radius: 50%;
 }
 
@@ -173,7 +170,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-    #index_form {
+    #search {
         width: 80%;
         min-height: 226px;
         height: 30%;
@@ -187,20 +184,20 @@
             "showall_button submit_button";
     }
 
-    #index_form_searchbox {
+    #search__bar {
         margin: 0;
         grid-column: searchbar;
         grid-row: searchbar;
     }
 
-    #index_form_genrelist {
+    #search__select {
         width: 100%;
         margin: 0;
         grid-column: genrelist;
         grid-row: genrelist;
     }
 
-    #index_form_showall_button {
+    .search__button--showall {
         min-height: 35px;
         width: 80%;
         margin: 0;
@@ -208,7 +205,7 @@
         grid-row: showall_button;
     }
 
-    #index_form_submit_button {
+    .search__button--submit {
         min-height: 21px;
         padding: 2.5vh;
         margin: 0;
@@ -216,7 +213,7 @@
         grid-row: submit_button;
     }
 
-    #index_form_reset_button {
+    .search__button--reset{
         padding: 1vh;
     }
 }

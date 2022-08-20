@@ -1,5 +1,5 @@
 * {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 
@@ -36,7 +36,7 @@ html.transition *,
 html.transition *::before,
 html.transition *::after {
     transition: all 750ms !important;
-    transition-delay: 0 impo !important;
+    transition-delay: 0 !important;
 }
 
 
@@ -49,16 +49,29 @@ body {
     background: var(--bg-color);
 }
 
-#global_toggle {
+header {
+    position: absolute;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    text-align: right;
+    z-index: 1;
+}
+
+
+#theme {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     top: 1vh;
     left: 1vh;
+    z-index: 2;
 }
 
-#global_darkmode_toggle {
+#theme__toggle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,23 +85,21 @@ body {
     outline: none;
 }
 
-#global_darkmode_toggle_label {
+#theme__toggle--state {
     position: absolute;
     left: 10px;
     display: flex;
     align-items: center;
     justify-items: center;
-    /* top: 2.8vh; left: 3.3vh; */
     width: 24px;
     height: 24px;
     border-radius: 50%;
     background-color: #ffcc33;
     transition: all 0.3s;
-    /* box-shadow: 0px 3px 4px var(--shadow-color); */
     cursor: pointer;
 }
 
-#global_darkmode_toggle_label::before {
+#theme__toggle--state::before {
     content: '';
     position: absolute;
     left: 1px;
@@ -96,34 +107,33 @@ body {
     height: 1px;
     border-radius: 50%;
     background-color: var(--bg-input-color);
-    /* box-shadow: 0px 3px 4px var(--shadow-color); */
     cursor: pointer;
 }
 
-#global_darkmode_toggle:checked + #global_darkmode_toggle_label  {
+#theme__toggle:checked + #theme__toggle--state  {
     transform: translateX(26px);
 }
 
-#global_darkmode_toggle:checked + #global_darkmode_toggle_label::before {
+#theme__toggle:checked + #theme__toggle--state::before {
     background-repeat: #15153b;
     transform: scale(25);
 }
 
-.main_title {
+#title {
     color: var(--headers-color);
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 600;
-    margin-bottom: 0;
+    margin-right: 2%;
 }
 
-.main_subtitle {
+.subtitle {
     color: var(--headers-color);
     font-weight: 300;
     font-size: 1.25em;
     font-style: italic;
 }
 
-.main_subtitle_highlight {
+.subtitle--highlight {
     background: var(--primary-color);
     color: #efefef;
     font-style: normal;
