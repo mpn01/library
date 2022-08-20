@@ -1,17 +1,12 @@
-<<<<<<< HEAD
+
 # Home library
 Simple library project written in PHP and MySQL. It contains various ways to search between the books, that is searching by keywords like title, authors, tags or publishing house and also searching by genre of the book.
-=======
-=======
->>>>>>> c83c554fc1e2bf718bc7571a46b28a5ad9126e37
+
 # <p align="center"> 📚 Library️ </p>
 
 ## 📖 Description
 Library project written in PHP and MySQL. It contains various ways to search between the books, that is searching by keywords like title, authors, tags or publishing house and also searching by genre of the book.
-<<<<<<< HEAD
->>>>>>> c83c554fc1e2bf718bc7571a46b28a5ad9126e37
-=======
->>>>>>> c83c554fc1e2bf718bc7571a46b28a5ad9126e37
+
 
 ![HomeLibraryTeaser](https://raw.githubusercontent.com/mpn01/home-library/master/README/videos/teaser.gif)
 
